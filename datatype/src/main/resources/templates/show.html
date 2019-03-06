@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<a href="/">Show All Books</a><br/>
+
+
+Name: <span th:text="${book.name}"></span><br/>
+Author : <span th:text="${book.author}"></span><br/>
+Price : <span th:text="${book.price}"></span><br/>
+Is it Good : <span th:text="${book.isGood}"></span><br/>
+
+
+
+
+<a th:href="@{/delete/{id}(id=${book.id})}">Delete This Book</a>
+
+
+</body>
+</html>

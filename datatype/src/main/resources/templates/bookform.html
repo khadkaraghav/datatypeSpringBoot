@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+
+<form action ="#"
+      th:action="@{/process}"
+      th:object="${book}"
+      method="post">
+
+
+    <input type="hidden" th:field="*{id}"/>
+
+    NAME : <input type="text" th:field="*{name}"/>
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}"></span>
+
+
+    AUTHOR : <input type="text" th:field="*{author}"/>
+    <span th:if="${#fields.hasErrors('author')}"
+          th:errors="*{author}"></span><br/>
+
+
+    PRICE : <input type="text" th:field="*{price}"/>
+    <span th:if="${#fields.hasErrors('price')}"
+          th:errors="*{price}"></span><br/>
+
+    IS IT GOOD : <input name="select" th:field="*{isGood}" type="radio" value="yes"/>Yes
+
+    <input name="select" th:field="*{isGood}" type="radio" value="no"/>No
+    <span th:errors="*{isGood}"
+          th:if="${#fields.hasErrors('isGood')}"></span>
+    <br/>
+    <input type="submit" value="Submit"/>
+
+
+
+</form>
+</body>
+</html>
